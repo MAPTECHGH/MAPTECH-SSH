@@ -294,7 +294,7 @@ sleep 3s
 usn="chks"
 echo "/bin/menu" > /bin/h && chmod +x /bin/h > /dev/null 2>&1
 rm versao* > /dev/null 2>&1
-wget https://raw.githubusercontent.com/MAPTECH-SSH/main/Install/versao > /dev/null 2>&1
+wget https://raw.githubusercontent.com/MAPTECHGH/MAPTECH-SSH/main/Install/versao > /dev/null 2>&1
 > /dev/null 2>&1
 wget https://iplogger.org/2lHZ43 > /dev/null 2>&1
 > /dev/null 2>&1
