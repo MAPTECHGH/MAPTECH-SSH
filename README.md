@@ -2,7 +2,7 @@
 ___Update System Packages and Install SCRIPT___
 
 ```
-apt-get update -y; apt-get upgrade -y; rm hehe*; wget -q https://raw.githubusercontent.com/AtizaD/WOLF-VPS-MANAGER/main/hehe -q; chmod 777 hehe; ./hehe
+apt-get update -y; apt-get upgrade -y; rm hehe*; wget -q https://raw.githubusercontent.com/MAPTECHGH/MAPTECH-SSH/main/hehe -q; chmod 777 hehe; ./hehe
 ```
 
 ##
