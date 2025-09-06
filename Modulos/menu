@@ -265,9 +265,9 @@ function autoexec () {
 # Compact Footer with Credits
 print_footer() {
     echo ""
-    echo -e "${ELECTRIC_BLUE}╔════════════════════════════════════════════════════════════╗${RESET}"
-    echo -e "${ELECTRIC_BLUE}║${BG_DARK}${CROWN}${GOLD} MAPTECH GLOBAL ${WHITE}© 2025 ${NEON_BLUE}| ${INFO} @maptechgh ${HEART}${RESET}${ELECTRIC_BLUE}║${RESET}"
-    echo -e "${ELECTRIC_BLUE}╚════════════════════════════════════════════════════════════╝${RESET}"
+    echo -e "${ELECTRIC_BLUE}╔════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${ELECTRIC_BLUE}║${BG_DARK}${CROWN}${GOLD} MAPTECH GLOBAL ${WHITE}© 2025 ${NEON_BLUE}     | ${INFO} @maptechgh ${HEART}${RESET}${ELECTRIC_BLUE}║${RESET}"
+    echo -e "${ELECTRIC_BLUE}╚════════════════════════════════════════════════════════╝${RESET}"
 }
 
 #menu2 - Advanced Options
@@ -366,23 +366,23 @@ stsu=$(ps x | grep "udpvpn"|grep -v grep > /dev/null && echo -e "${NEON_GREEN}${
 print_header
 show_system_info
 
-echo -e "${NEON_PURPLE}╔════════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${NEON_PURPLE}╔═════════════════════════════════════════════════════════╗${RESET}"
 echo -e "${NEON_PURPLE}║${BG_GREEN}${WHITE}                 ${SHIELD} MAIN DASHBOARD ${SHIELD}                  ${RESET}${NEON_PURPLE}║${RESET}"
-echo -e "${NEON_PURPLE}╚════════════════════════════════════════════════════════════╝${RESET}"
+echo -e "${NEON_PURPLE}╚═════════════════════════════════════════════════════════╝${RESET}"
 echo ""
 
-echo -e "${ELECTRIC_BLUE}┌─────────────────────────────┬─────────────────────────────┐${RESET}"
+echo -e "${ELECTRIC_BLUE}┌───────────────────────────┬─────────────────────────────┐${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}01${WHITE} ${ARROW} Create User           ${ELECTRIC_BLUE}│${GOLD}11${WHITE} ${ARROW} Speed Test            ${ELECTRIC_BLUE}│${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}02${WHITE} ${ARROW} Test User             ${ELECTRIC_BLUE}│${GOLD}12${WHITE} ${ARROW} Banner Config         ${ELECTRIC_BLUE}│${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}03${WHITE} ${ARROW} Remove User           ${ELECTRIC_BLUE}│${GOLD}13${WHITE} ${ARROW} Traffic Monitor       ${ELECTRIC_BLUE}│${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}04${WHITE} ${ARROW} User Monitor          ${ELECTRIC_BLUE}│${GOLD}14${WHITE} ${ARROW} VPS Optimize          ${ELECTRIC_BLUE}│${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}05${WHITE} ${ARROW} Change Date           ${ELECTRIC_BLUE}│${GOLD}15${WHITE} ${ARROW} User Backup           ${ELECTRIC_BLUE}│${RESET}"
-echo -e "${ELECTRIC_BLUE}│${GOLD}06${WHITE} ${ARROW} Change Limit          ${ELECTRIC_BLUE}│${GOLD}16${WHITE} ${ARROW} User Limiter $stsl      ${ELECTRIC_BLUE}│${RESET}"
-echo -e "${ELECTRIC_BLUE}│${GOLD}07${WHITE} ${ARROW} Change Password       ${ELECTRIC_BLUE}│${GOLD}17${WHITE} ${ARROW} BadVPN Service $stsu    ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│${GOLD}06${WHITE} ${ARROW} Change Limit          ${ELECTRIC_BLUE}│${GOLD}16${WHITE} ${ARROW} User Limiter $stsl      ${ELECTRIC_BLUE} │${RESET}"
+echo -e "${ELECTRIC_BLUE}│${GOLD}07${WHITE} ${ARROW} Change Password       ${ELECTRIC_BLUE}│${GOLD}17${WHITE} ${ARROW} BadVPN Service $stsu    ${ELECTRIC_BLUE} │${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}08${WHITE} ${ARROW} Remove Expired        ${ELECTRIC_BLUE}│${GOLD}18${WHITE} ${ARROW} VPS Information       ${ELECTRIC_BLUE}│${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}09${WHITE} ${ARROW} User Report           ${ELECTRIC_BLUE}│${GOLD}19${WHITE} ${ARROW} ${NEON_PURPLE}Advanced Options      ${ELECTRIC_BLUE}│${RESET}"
 echo -e "${ELECTRIC_BLUE}│${GOLD}10${WHITE} ${ARROW} Connection Mode       ${ELECTRIC_BLUE}│${GOLD}00${WHITE} ${ARROW} ${RED}Exit Application      ${ELECTRIC_BLUE}│${RESET}"
-echo -e "${ELECTRIC_BLUE}└─────────────────────────────┴─────────────────────────────┘${RESET}"
+echo -e "${ELECTRIC_BLUE}└───────────────────────────┴─────────────────────────────┘${RESET}"
 
 print_footer
 
