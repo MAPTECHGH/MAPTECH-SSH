@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Color definitions for modern theme
+# Premium Color Palette for MAPTECH GLOBAL
 RED='\033[1;31m'
 GREEN='\033[1;32m'
 YELLOW='\033[1;33m'
@@ -13,25 +13,64 @@ BOLD='\033[1m'
 RESET='\033[0m'
 DIM='\033[2m'
 
-# Background colors
+# Gradient Colors
+NEON_GREEN='\033[38;5;46m'
+NEON_BLUE='\033[38;5;51m'
+NEON_PURPLE='\033[38;5;129m'
+NEON_PINK='\033[38;5;201m'
+ORANGE='\033[38;5;208m'
+LIME='\033[38;5;154m'
+ELECTRIC_BLUE='\033[38;5;33m'
+GOLD='\033[38;5;220m'
+
+# Background Colors & Effects
 BG_RED='\033[41m'
 BG_GREEN='\033[42m'
 BG_BLUE='\033[44m'
 BG_PURPLE='\033[45m'
 BG_CYAN='\033[46m'
+BG_GOLD='\033[48;5;220m'
+BG_DARK='\033[48;5;232m'
+BLINK='\033[5m'
+UNDERLINE='\033[4m'
 
-# Special characters for modern design
-ARROW="→"
-BULLET="●"
-DIAMOND="♦"
-STAR="★"
-CHECK="✓"
-CROSS="✗"
-GEAR="⚙"
-SHIELD="🛡"
-ROCKET="🚀"
+# Premium Unicode Characters
+LOGO="🌟"
 GLOBE="🌐"
+ROCKET="🚀"
+SHIELD="🛡️"
+GEAR="⚙️"
+DIAMOND="💎"
+STAR="⭐"
+LIGHTNING="⚡"
+CROWN="👑"
+FIRE="🔥"
+ARROW="➤"
+DOUBLE_ARROW="⟫"
+CHECK_MARK="✅"
+CROSS_MARK="❌"
+WARNING="⚠️"
+INFO="ℹ️"
+BULLET="●"
+CIRCLE="○"
+TRIANGLE="▲"
+SQUARE="■"
+HEART="❤️"
 
+# Box Drawing Characters
+TOP_LEFT="╔"
+TOP_RIGHT="╗"
+BOTTOM_LEFT="╚"
+BOTTOM_RIGHT="╝"
+HORIZONTAL="═"
+VERTICAL="║"
+CROSS="╬"
+T_DOWN="╦"
+T_UP="╩"
+T_RIGHT="╠"
+T_LEFT="╣"
+
+# Advanced Progress Bar
 fun_bar () {
 comando[0]="$1"
 comando[1]="$2"
@@ -43,38 +82,42 @@ ${comando[1]} -y > /dev/null 2>&1
 touch $HOME/fim
  ) > /dev/null 2>&1 &
  tput civis
-echo -ne "${CYAN}[${RESET}"
+echo -ne "${NEON_BLUE}${LIGHTNING} ${WHITE}Processing ${NEON_PURPLE}${DOUBLE_ARROW} ${CYAN}["
 while true; do
-   for((i=0; i<25; i++)); do
-   echo -ne "${GREEN}━${RESET}"
-   sleep 0.08s
+   for((i=0; i<30; i++)); do
+   echo -ne "${NEON_GREEN}█"
+   sleep 0.06s
    done
    [[ -e $HOME/fim ]] && rm $HOME/fim && break
-   echo -e "${CYAN}]${RESET}"
+   echo -e "${CYAN}]"
    sleep 1s
    tput cuu1
    tput dl1
-   echo -ne "${CYAN}[${RESET}"
+   echo -ne "${NEON_BLUE}${LIGHTNING} ${WHITE}Processing ${NEON_PURPLE}${DOUBLE_ARROW} ${CYAN}["
 done
-echo -e "${CYAN}] ${GREEN}${CHECK} ${WHITE}COMPLETED${RESET}"
+echo -e "${CYAN}] ${NEON_GREEN}${CHECK_MARK} ${WHITE}COMPLETED${RESET}"
 tput cnorm
 }
 
 IP=$(cat /etc/IP)
 x="ok"
 
-# Header function for consistent branding
-print_header() {
+# Premium Header with MAPTECH GLOBAL Branding
+print_premium_header() {
     clear
-    echo -e "${BLUE}╔══════════════════════════════════════════════════════════════╗${RESET}"
-    echo -e "${BLUE}║${BG_BLUE}${WHITE}                     ${ROCKET} MAPTECH VPS MANAGER ${ROCKET}                     ${RESET}${BLUE}║${RESET}"
-    echo -e "${BLUE}║${BG_BLUE}${WHITE}                         Advanced Control Panel                        ${RESET}${BLUE}║${RESET}"
-    echo -e "${BLUE}╚══════════════════════════════════════════════════════════════╝${RESET}"
+    echo ""
+    echo -e "${NEON_PURPLE}${TOP_LEFT}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${TOP_RIGHT}${RESET}"
+    echo -e "${NEON_PURPLE}${VERTICAL}${BG_DARK}${NEON_GREEN}                                ${CROWN} MAPTECH GLOBAL ${CROWN}                               ${RESET}${NEON_PURPLE}${VERTICAL}${RESET}"
+    echo -e "${NEON_PURPLE}${VERTICAL}${BG_DARK}${GOLD}                          ${ROCKET} PREMIUM VPS MANAGEMENT SUITE ${ROCKET}                         ${RESET}${NEON_PURPLE}${VERTICAL}${RESET}"
+    echo -e "${NEON_PURPLE}${VERTICAL}${BG_DARK}${NEON_BLUE}                              ${GLOBE} Professional Control Panel ${GLOBE}                             ${RESET}${NEON_PURPLE}${VERTICAL}${RESET}"
+    echo -e "${NEON_PURPLE}${VERTICAL}${BG_DARK}${WHITE}                                                                                    ${RESET}${NEON_PURPLE}${VERTICAL}${RESET}"
+    echo -e "${NEON_PURPLE}${VERTICAL}${BG_DARK}${NEON_PINK}                     ${LIGHTNING} Powered by Advanced Technology ${LIGHTNING}                        ${RESET}${NEON_PURPLE}${VERTICAL}${RESET}"
+    echo -e "${NEON_PURPLE}${BOTTOM_LEFT}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${BOTTOM_RIGHT}${RESET}"
     echo ""
 }
 
-# System info display function
-show_system_info() {
+# Premium System Information Display
+show_premium_system_info() {
     if [[ "$(grep -c "Ubuntu" /etc/issue.net)" = "1" ]]; then
         system=$(cut -d' ' -f1 /etc/issue.net)
         system+=$(echo ' ')
@@ -102,24 +145,26 @@ show_system_info() {
     _userexp=$(printf '%-5s' "$_expuser")
     _tuser=$(awk -F: '$3>=1000 {print $1}' /etc/passwd | grep -v nobody | wc -l)
 
-    echo -e "${PURPLE}┌─────────────────────┬─────────────────────┬─────────────────────┐${RESET}"
-    echo -e "${PURPLE}│${WHITE} ${GEAR} SYSTEM INFORMATION ${PURPLE}│${WHITE} ${SHIELD} MEMORY STATUS      ${PURPLE}│${WHITE} ${ROCKET} CPU INFORMATION    ${PURPLE}│${RESET}"
-    echo -e "${PURPLE}├─────────────────────┼─────────────────────┼─────────────────────┤${RESET}"
-    echo -e "${PURPLE}│${CYAN} OS: ${WHITE}$_system     ${PURPLE}│${CYAN} Total: ${WHITE}$_ram      ${PURPLE}│${CYAN} Cores: ${WHITE}$_core           ${PURPLE}│${RESET}"
-    echo -e "${PURPLE}│${CYAN} Time: ${WHITE}$_hora       ${PURPLE}│${CYAN} Used: ${WHITE}$_usor        ${PURPLE}│${CYAN} Usage: ${WHITE}$_usop          ${PURPLE}│${RESET}"
-    echo -e "${PURPLE}└─────────────────────┴─────────────────────┴─────────────────────┘${RESET}"
+    echo -e "${ELECTRIC_BLUE}┌─────────────────────────┬─────────────────────────┬─────────────────────────┐${RESET}"
+    echo -e "${ELECTRIC_BLUE}│${BG_BLUE}${WHITE} ${GEAR} SYSTEM OVERVIEW        ${RESET}${ELECTRIC_BLUE}│${BG_GREEN}${WHITE} ${SHIELD} MEMORY STATUS          ${RESET}${ELECTRIC_BLUE}│${BG_PURPLE}${WHITE} ${ROCKET} CPU PERFORMANCE        ${RESET}${ELECTRIC_BLUE}│${RESET}"
+    echo -e "${ELECTRIC_BLUE}├─────────────────────────┼─────────────────────────┼─────────────────────────┤${RESET}"
+    echo -e "${ELECTRIC_BLUE}│${NEON_GREEN} OS: ${WHITE}$_system      ${ELECTRIC_BLUE}│${NEON_GREEN} Total: ${WHITE}$_ram       ${ELECTRIC_BLUE}│${NEON_GREEN} Cores: ${WHITE}$_core            ${ELECTRIC_BLUE}│${RESET}"
+    echo -e "${ELECTRIC_BLUE}│${GOLD} Uptime: ${WHITE}$_hora     ${ELECTRIC_BLUE}│${GOLD} Usage: ${WHITE}$_usor       ${ELECTRIC_BLUE}│${GOLD} Load: ${WHITE}$_usop           ${ELECTRIC_BLUE}│${RESET}"
+    echo -e "${ELECTRIC_BLUE}└─────────────────────────┴─────────────────────────┴─────────────────────────┘${RESET}"
     echo ""
     
+    # Premium User Statistics with Visual Indicators
     [[ ! -e /tmp/att ]]  && {
-        echo -e "${GREEN}${BULLET} ${WHITE}Online Users: ${GREEN}$_onlin   ${RED}${BULLET} ${WHITE}Expired: ${RED}$_userexp   ${YELLOW}${BULLET} ${WHITE}Total: ${YELLOW}$_tuser${RESET}"
-        var01="${WHITE}${BULLET}${RESET}"
+        echo -e "${NEON_GREEN}${DIAMOND} ${WHITE}Active Connections: ${NEON_GREEN}$_onlin   ${NEON_PINK}${DIAMOND} ${WHITE}Expired Users: ${RED}$_userexp   ${GOLD}${DIAMOND} ${WHITE}Total Users: ${YELLOW}$_tuser${RESET}"
+        var01="${WHITE}${STAR}${RESET}"
     } || {
-        echo -e "${YELLOW}  ${STAR}${RED} UPDATE AVAILABLE! ${STAR} ${WHITE}Please update your system ${STAR}${RESET}"
-        var01="${GREEN}${STAR}${RESET}"
+        echo -e "${BLINK}${GOLD}${FIRE} ${RED}CRITICAL UPDATE AVAILABLE! ${FIRE} ${WHITE}System requires immediate attention ${FIRE}${RESET}"
+        var01="${BLINK}${NEON_GREEN}${FIRE}${RESET}"
     }
     echo ""
 }
 
+# Premium Network Speed Test
 velocity () {
 aguarde () {
 comando[0]="$1"
@@ -132,27 +177,27 @@ ${comando[1]} > /dev/null 2>&1
 touch $HOME/fim
  ) > /dev/null 2>&1 &
  tput civis
-echo -ne "  ${YELLOW}${GLOBE} Testing Network Performance ${WHITE}- ${CYAN}[${RESET}"
+echo -ne "  ${NEON_BLUE}${GLOBE} ${WHITE}Analyzing Network Performance ${NEON_PURPLE}${DOUBLE_ARROW} ${CYAN}["
 while true; do
-   for((i=0; i<25; i++)); do
-   echo -ne "${GREEN}━${RESET}"
-   sleep 0.08s
+   for((i=0; i<30; i++)); do
+   echo -ne "${NEON_GREEN}█"
+   sleep 0.06s
    done
    [[ -e $HOME/fim ]] && rm $HOME/fim && break
-   echo -e "${CYAN}]${RESET}"
+   echo -e "${CYAN}]"
    sleep 1s
    tput cuu1
    tput dl1
-   echo -ne "  ${YELLOW}${GLOBE} Testing Network Performance ${WHITE}- ${CYAN}[${RESET}"
+   echo -ne "  ${NEON_BLUE}${GLOBE} ${WHITE}Analyzing Network Performance ${NEON_PURPLE}${DOUBLE_ARROW} ${CYAN}["
 done
-echo -e "${CYAN}] ${GREEN}${CHECK} ${WHITE}COMPLETED${RESET}"
+echo -e "${CYAN}] ${NEON_GREEN}${CHECK_MARK} ${WHITE}ANALYSIS COMPLETE${RESET}"
 tput cnorm
 }
 fun_tst () {
 speedtest --share > speed
 }
-print_header
-echo -e "${CYAN}${GLOBE} ${WHITE}NETWORK SPEED TEST ${GLOBE}${RESET}"
+print_premium_header
+echo -e "${NEON_BLUE}${GLOBE} ${WHITE}MAPTECH GLOBAL ${GOLD}${DIAMOND} ${WHITE}NETWORK PERFORMANCE ANALYZER ${GOLD}${DIAMOND} ${NEON_BLUE}${GLOBE}${RESET}"
 echo ""
 aguarde 'fun_tst'
 echo ""
@@ -160,19 +205,19 @@ png=$(cat speed | sed -n '5 p' |awk -F : {'print $NF'})
 down=$(cat speed | sed -n '7 p' |awk -F :  {'print $NF'})
 upl=$(cat speed | sed -n '9 p' |awk -F :  {'print $NF'})
 lnk=$(cat speed | sed -n '10 p' |awk {'print $NF'})
-echo -e "${BLUE}╔══════════════════════════════════════════════════╗${RESET}"
-echo -e "${BLUE}║${YELLOW} ${ROCKET} LATENCY: ${WHITE}$png                              ${BLUE}║${RESET}"
-echo -e "${BLUE}║${GREEN} ${ARROW} DOWNLOAD: ${WHITE}$down                            ${BLUE}║${RESET}"
-echo -e "${BLUE}║${RED} ${ARROW} UPLOAD: ${WHITE}$upl                              ${BLUE}║${RESET}"
-echo -e "${BLUE}║${CYAN} ${GLOBE} SHARE LINK: ${WHITE}$lnk${BLUE}║${RESET}"
-echo -e "${BLUE}╚══════════════════════════════════════════════════╝${RESET}"
+echo -e "${NEON_PURPLE}╔══════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${NEON_PURPLE}║${BG_DARK}${GOLD} ${LIGHTNING} LATENCY: ${WHITE}$png                                    ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}║${BG_DARK}${NEON_GREEN} ${ARROW} DOWNLOAD: ${WHITE}$down                                  ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}║${BG_DARK}${NEON_PINK} ${ARROW} UPLOAD: ${WHITE}$upl                                    ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}║${BG_DARK}${NEON_BLUE} ${GLOBE} SHARE: ${WHITE}$lnk${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}╚══════════════════════════════════════════════════════════╝${RESET}"
 rm -rf $HOME/speed
 }
 
-#limiter
+# Enhanced Limiter Functions
 function limit1 () {
-   print_header
-   echo -e "${GREEN}${ROCKET} ${WHITE}INITIALIZING USER LIMITER...${RESET}"
+   print_premium_header
+   echo -e "${NEON_GREEN}${ROCKET} ${WHITE}INITIALIZING MAPTECH USER LIMITER...${RESET}"
    echo ""
    fun_bar 'screen -dmS limiter limiter' 'sleep 3'
    [[ $(grep -wc "limiter" /etc/autostart) = '0' ]] && {
@@ -181,14 +226,14 @@ function limit1 () {
        sed -i '/limiter/d' /etc/autostart
 	   echo -e "ps x | grep 'limiter' | grep -v 'grep' && echo 'ON' || screen -dmS limiter limiter" >> /etc/autostart
    }
-   echo -e "${GREEN}${CHECK} ${WHITE}USER LIMITER ACTIVATED SUCCESSFULLY!${RESET}"
+   echo -e "${NEON_GREEN}${CHECK_MARK} ${WHITE}USER LIMITER ACTIVATED SUCCESSFULLY!${RESET}"
    sleep 3
    menu
 }
 
 function limit2 () {
-   print_header
-   echo -e "${RED}${CROSS} ${WHITE}STOPPING USER LIMITER...${RESET}"
+   print_premium_header
+   echo -e "${RED}${CROSS_MARK} ${WHITE}DEACTIVATING USER LIMITER...${RESET}"
    echo ""
    fun_stplimiter () {
       sleep 1
@@ -200,7 +245,7 @@ function limit2 () {
       sleep 1
    }
    fun_bar 'fun_stplimiter' 'sleep 3'
-   echo -e "${RED}${CROSS} ${WHITE}USER LIMITER STOPPED!${RESET}"
+   echo -e "${RED}${CROSS_MARK} ${WHITE}USER LIMITER DEACTIVATED!${RESET}"
    sleep 3
    menu
 }
@@ -211,20 +256,20 @@ function limit_ssh () {
 
 function autoexec () {
    if grep "menu;" /etc/profile > /dev/null; then
-      print_header
-      echo -e "${YELLOW}${GEAR} ${WHITE}DISABLING AUTO-EXECUTION${RESET}"
+      print_premium_header
+      echo -e "${ORANGE}${GEAR} ${WHITE}DISABLING AUTO-EXECUTION SYSTEM${RESET}"
       offautmenu () {
          sed -i '/menu;/d' /etc/profile
       }
       echo ""
       fun_bar 'offautmenu'
       echo ""
-      echo -e "${RED}${CROSS} ${WHITE}AUTO-EXECUTION DISABLED!${RESET}"
+      echo -e "${RED}${CROSS_MARK} ${WHITE}AUTO-EXECUTION DISABLED!${RESET}"
       sleep 1.5s
       menu2
    else
-      print_header
-      echo -e "${GREEN}${GEAR} ${WHITE}ENABLING AUTO-EXECUTION${RESET}"
+      print_premium_header
+      echo -e "${NEON_GREEN}${GEAR} ${WHITE}ENABLING AUTO-EXECUTION SYSTEM${RESET}"
       autmenu () {
          grep -v "^menu;" /etc/profile > /tmp/tmpass && mv /tmp/tmpass /etc/profile
          echo "menu;" >> /etc/profile
@@ -232,49 +277,62 @@ function autoexec () {
       echo ""
       fun_bar 'autmenu'
       echo ""
-      echo -e "${GREEN}${CHECK} ${WHITE}AUTO-EXECUTION ENABLED!${RESET}"
+      echo -e "${NEON_GREEN}${CHECK_MARK} ${WHITE}AUTO-EXECUTION ENABLED!${RESET}"
       sleep 1.5s
       menu2
    fi
 }
 
-#menu2
+# Premium Footer
+print_footer() {
+    echo ""
+    echo -e "${ELECTRIC_BLUE}┌────────────────────────────────────────────────────────────────────┐${RESET}"
+    echo -e "${ELECTRIC_BLUE}│${BG_DARK}${NEON_PURPLE}                    ${CROWN} MAPTECH GLOBAL SUPPORT ${CROWN}                       ${RESET}${ELECTRIC_BLUE}│${RESET}"
+    echo -e "${ELECTRIC_BLUE}│${BG_DARK}${WHITE}                 ${INFO} Telegram: ${NEON_BLUE}@maptechgh ${WHITE}${INFO} 24/7 Support                    ${RESET}${ELECTRIC_BLUE}│${RESET}"
+    echo -e "${ELECTRIC_BLUE}│${BG_DARK}${GOLD}                ${HEART} Professional VPS Management Solutions ${HEART}                ${RESET}${ELECTRIC_BLUE}│${RESET}"
+    echo -e "${ELECTRIC_BLUE}└────────────────────────────────────────────────────────────────────┘${RESET}"
+}
+
+#menu2 - Advanced Options
 menu2 (){
-[[ -e /etc/Plus-torrent ]] && stsf="${GREEN}${CHECK}${RESET}" || stsf="${RED}${CROSS}${RESET}"
-stsbot=$(ps x | grep "bot_plus"|grep -v grep > /dev/null && echo -e "${GREEN}${CHECK}${RESET}" || echo -e "${RED}${CROSS}${RESET}")
-autm=$(grep "menu;" /etc/profile > /dev/null && echo -e "${GREEN}${CHECK}${RESET}" || echo -e "${RED}${CROSS}${RESET}")
+[[ -e /etc/Plus-torrent ]] && stsf="${NEON_GREEN}${CHECK_MARK}${RESET}" || stsf="${RED}${CROSS_MARK}${RESET}"
+stsbot=$(ps x | grep "bot_plus"|grep -v grep > /dev/null && echo -e "${NEON_GREEN}${CHECK_MARK}${RESET}" || echo -e "${RED}${CROSS_MARK}${RESET}")
+autm=$(grep "menu;" /etc/profile > /dev/null && echo -e "${NEON_GREEN}${CHECK_MARK}${RESET}" || echo -e "${RED}${CROSS_MARK}${RESET}")
 [[ ! -e /usr/lib/licence ]] && rm -rf /bin > /dev/null 2>&1
 
-print_header
-show_system_info
+print_premium_header
+show_premium_system_info
 
-echo -e "${BLUE}╔════════════════════════════════════════════════════════════════╗${RESET}"
-echo -e "${BLUE}║${BG_PURPLE}${WHITE}                         ${GEAR} ADVANCED OPTIONS ${GEAR}                        ${RESET}${BLUE}║${RESET}"
-echo -e "${BLUE}╚════════════════════════════════════════════════════════════════╝${RESET}"
+echo -e "${NEON_PURPLE}╔══════════════════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${NEON_PURPLE}║${BG_PURPLE}${WHITE}                      ${GEAR} ADVANCED SYSTEM CONTROL ${GEAR}                         ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}║${BG_PURPLE}${WHITE}                         ${DIAMOND} Expert Configuration ${DIAMOND}                         ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}╚══════════════════════════════════════════════════════════════════════╝${RESET}"
 echo ""
 
-echo -e "${CYAN}┌──────────────────────────────┬──────────────────────────────┐${RESET}"
-echo -e "${CYAN}│ ${YELLOW}20${RESET} ${ARROW} ${WHITE}Add Host                  ${CYAN}│ ${YELLOW}26${RESET} ${ARROW} ${WHITE}Change Root Password      ${CYAN}│${RESET}"
-echo -e "${CYAN}│ ${YELLOW}21${RESET} ${ARROW} ${WHITE}Remove Host               ${CYAN}│ ${YELLOW}27${RESET} ${ARROW} ${WHITE}Auto-Execute $autm           ${CYAN}│${RESET}"
-echo -e "${CYAN}│ ${YELLOW}22${RESET} ${ARROW} ${WHITE}Restart System            ${CYAN}│ ${YELLOW}28${RESET} $var01 ${WHITE}Update Script            ${CYAN}│${RESET}"
-echo -e "${CYAN}│ ${YELLOW}23${RESET} ${ARROW} ${WHITE}Restart Services          ${CYAN}│ ${YELLOW}29${RESET} ${ARROW} ${WHITE}Remove Script            ${CYAN}│${RESET}"
-echo -e "${CYAN}│ ${YELLOW}24${RESET} ${ARROW} ${WHITE}Block Torrent $stsf          ${CYAN}│ ${YELLOW}30${RESET} ${ARROW} ${GREEN}Return to Main           ${CYAN}│${RESET}"
-echo -e "${CYAN}│ ${YELLOW}25${RESET} ${ARROW} ${WHITE}Telegram Bot $stsbot           ${CYAN}│ ${YELLOW}00${RESET} ${ARROW} ${RED}Exit System              ${CYAN}│${RESET}"
-echo -e "${CYAN}└──────────────────────────────┴──────────────────────────────┘${RESET}"
-echo ""
-echo -ne "${WHITE}${ARROW} ${CYAN}Select Option ${WHITE}[${YELLOW}20-30${WHITE}]: ${RESET}"; read x
+echo -e "${ELECTRIC_BLUE}┌──────────────────────────────────┬──────────────────────────────────┐${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}20${RESET} ${DOUBLE_ARROW} ${WHITE}Add Host Configuration       ${ELECTRIC_BLUE}│ ${GOLD}26${RESET} ${DOUBLE_ARROW} ${WHITE}Root Password Manager        ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}21${RESET} ${DOUBLE_ARROW} ${WHITE}Remove Host Entry            ${ELECTRIC_BLUE}│ ${GOLD}27${RESET} ${DOUBLE_ARROW} ${WHITE}Auto-Execute $autm              ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}22${RESET} ${DOUBLE_ARROW} ${WHITE}System Restart Manager       ${ELECTRIC_BLUE}│ ${GOLD}28${RESET} $var01 ${WHITE}Script Update Center         ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}23${RESET} ${DOUBLE_ARROW} ${WHITE}Service Restart Control      ${ELECTRIC_BLUE}│ ${GOLD}29${RESET} ${DOUBLE_ARROW} ${WHITE}Script Removal Tool          ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}24${RESET} ${DOUBLE_ARROW} ${WHITE}Torrent Blocking $stsf           ${ELECTRIC_BLUE}│ ${GOLD}30${RESET} ${DOUBLE_ARROW} ${NEON_GREEN}Return to Main Menu         ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}25${RESET} ${DOUBLE_ARROW} ${WHITE}Telegram Bot Service $stsbot     ${ELECTRIC_BLUE}│ ${GOLD}00${RESET} ${DOUBLE_ARROW} ${RED}Exit Application            ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}└──────────────────────────────────┴──────────────────────────────────┘${RESET}"
+
+print_footer
+
+echo -ne "${WHITE}${ARROW} ${NEON_BLUE}Enter your choice ${WHITE}[${GOLD}20-30${WHITE}]: ${RESET}"; read x
 
 case "$x" in
    20)
    clear
    addhost
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    menu2
    ;;
    21)
    clear
    delhost
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    menu2
    ;;
    22)
@@ -311,57 +369,60 @@ case "$x" in
    menu
    ;;
    0|00)
-   echo -e "${RED}${ARROW} ${WHITE}Shutting down system...${RESET}"
+   echo -e "${RED}${ARROW} ${WHITE}Shutting down MAPTECH system...${RESET}"
    sleep 2
    clear
    exit;
    ;;
    *)
-   echo -e "\n${RED}${CROSS} ${WHITE}Invalid option! Please try again.${RESET}"
+   echo -e "\n${RED}${CROSS_MARK} ${WHITE}Invalid selection! Please choose a valid option.${RESET}"
    sleep 2
 esac
 }
 
-# Main menu function
+# Main Premium Menu
 menu() {
 while true $x != "ok"
 do
-stsl=$(ps x | grep "limiter"|grep -v grep > /dev/null && echo -e "${GREEN}${CHECK}${RESET}" || echo -e "${RED}${CROSS}${RESET}")
-stsu=$(ps x | grep "udpvpn"|grep -v grep > /dev/null && echo -e "${GREEN}${CHECK}${RESET}" || echo -e "${RED}${CROSS}${RESET}")
+stsl=$(ps x | grep "limiter"|grep -v grep > /dev/null && echo -e "${NEON_GREEN}${CHECK_MARK}${RESET}" || echo -e "${RED}${CROSS_MARK}${RESET}")
+stsu=$(ps x | grep "udpvpn"|grep -v grep > /dev/null && echo -e "${NEON_GREEN}${CHECK_MARK}${RESET}" || echo -e "${RED}${CROSS_MARK}${RESET}")
 
-print_header
-show_system_info
+print_premium_header
+show_premium_system_info
 
-echo -e "${BLUE}╔════════════════════════════════════════════════════════════════╗${RESET}"
-echo -e "${BLUE}║${BG_GREEN}${WHITE}                        ${SHIELD} MAIN CONTROL PANEL ${SHIELD}                       ${RESET}${BLUE}║${RESET}"
-echo -e "${BLUE}╚════════════════════════════════════════════════════════════════╝${RESET}"
+echo -e "${NEON_PURPLE}╔══════════════════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${NEON_PURPLE}║${BG_GREEN}${WHITE}                       ${SHIELD} MAIN CONTROL DASHBOARD ${SHIELD}                        ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}║${BG_GREEN}${WHITE}                         ${STAR} Professional Management ${STAR}                        ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}╚══════════════════════════════════════════════════════════════════════╝${RESET}"
 echo ""
 
-echo -e "${PURPLE}┌──────────────────────────────┬──────────────────────────────┐${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}01${RESET} ${ARROW} ${WHITE}Create User               ${PURPLE}│ ${YELLOW}11${RESET} ${ARROW} ${WHITE}Network Speed Test       ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}02${RESET} ${ARROW} ${WHITE}Create Test User          ${PURPLE}│ ${YELLOW}12${RESET} ${ARROW} ${WHITE}Banner Configuration     ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}03${RESET} ${ARROW} ${WHITE}Remove User               ${PURPLE}│ ${YELLOW}13${RESET} ${ARROW} ${WHITE}Network Traffic Monitor  ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}04${RESET} ${ARROW} ${WHITE}Online User Monitor       ${PURPLE}│ ${YELLOW}14${RESET} ${ARROW} ${WHITE}VPS Optimization         ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}05${RESET} ${ARROW} ${WHITE}Change User Date          ${PURPLE}│ ${YELLOW}15${RESET} ${ARROW} ${WHITE}User Backup Manager      ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}06${RESET} ${ARROW} ${WHITE}Change User Limit         ${PURPLE}│ ${YELLOW}16${RESET} ${ARROW} ${WHITE}User Limiter $stsl          ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}07${RESET} ${ARROW} ${WHITE}Change Password           ${PURPLE}│ ${YELLOW}17${RESET} ${ARROW} ${WHITE}BadVPN Service $stsu        ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}08${RESET} ${ARROW} ${WHITE}Remove Expired Users      ${PURPLE}│ ${YELLOW}18${RESET} ${ARROW} ${WHITE}VPS Information          ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}09${RESET} ${ARROW} ${WHITE}User Activity Report      ${PURPLE}│ ${YELLOW}19${RESET} ${ARROW} ${CYAN}Advanced Options         ${PURPLE}│${RESET}"
-echo -e "${PURPLE}│ ${YELLOW}10${RESET} ${ARROW} ${WHITE}Connection Mode Setup     ${PURPLE}│ ${YELLOW}00${RESET} ${ARROW} ${RED}Exit Application         ${PURPLE}│${RESET}"
-echo -e "${PURPLE}└──────────────────────────────┴──────────────────────────────┘${RESET}"
-echo ""
-echo -ne "${WHITE}${ARROW} ${CYAN}Select Option ${WHITE}[${YELLOW}01-19${WHITE}]: ${RESET}"; read x
+echo -e "${ELECTRIC_BLUE}┌──────────────────────────────────┬──────────────────────────────────┐${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}01${RESET} ${DOUBLE_ARROW} ${WHITE}User Creation Center         ${ELECTRIC_BLUE}│ ${GOLD}11${RESET} ${DOUBLE_ARROW} ${WHITE}Network Speed Analysis       ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}02${RESET} ${DOUBLE_ARROW} ${WHITE}Test User Generator          ${ELECTRIC_BLUE}│ ${GOLD}12${RESET} ${DOUBLE_ARROW} ${WHITE}Banner Configuration         ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}03${RESET} ${DOUBLE_ARROW} ${WHITE}User Removal Tool            ${ELECTRIC_BLUE}│ ${GOLD}13${RESET} ${DOUBLE_ARROW} ${WHITE}Traffic Monitor Dashboard    ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}04${RESET} ${DOUBLE_ARROW} ${WHITE}Live User Monitor            ${ELECTRIC_BLUE}│ ${GOLD}14${RESET} ${DOUBLE_ARROW} ${WHITE}VPS Optimization Suite       ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}05${RESET} ${DOUBLE_ARROW} ${WHITE}Date Modification Center     ${ELECTRIC_BLUE}│ ${GOLD}15${RESET} ${DOUBLE_ARROW} ${WHITE}Backup Management System     ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}06${RESET} ${DOUBLE_ARROW} ${WHITE}Connection Limit Manager     ${ELECTRIC_BLUE}│ ${GOLD}16${RESET} ${DOUBLE_ARROW} ${WHITE}User Limiter Service $stsl      ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}07${RESET} ${DOUBLE_ARROW} ${WHITE}Password Security Center     ${ELECTRIC_BLUE}│ ${GOLD}17${RESET} ${DOUBLE_ARROW} ${WHITE}BadVPN Service Control $stsu    ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}08${RESET} ${DOUBLE_ARROW} ${WHITE}Expired User Cleanup         ${ELECTRIC_BLUE}│ ${GOLD}18${RESET} ${DOUBLE_ARROW} ${WHITE}VPS Information Center       ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}09${RESET} ${DOUBLE_ARROW} ${WHITE}User Activity Analytics      ${ELECTRIC_BLUE}│ ${GOLD}19${RESET} ${DOUBLE_ARROW} ${NEON_PURPLE}Advanced Options Menu        ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}│ ${GOLD}10${RESET} ${DOUBLE_ARROW} ${WHITE}Connection Mode Setup        ${ELECTRIC_BLUE}│ ${GOLD}00${RESET} ${DOUBLE_ARROW} ${RED}Exit MAPTECH System         ${ELECTRIC_BLUE}│${RESET}"
+echo -e "${ELECTRIC_BLUE}└──────────────────────────────────┴──────────────────────────────────┘${RESET}"
+
+print_footer
+
+echo -ne "${WHITE}${ARROW} ${NEON_BLUE}Select your option ${WHITE}[${GOLD}01-19${WHITE}]: ${RESET}"; read x
 
 case "$x" in 
    1 | 01)
    clear
    criarusuario
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;
    2 | 02)
    clear
    criarteste
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;
    3 | 03)
    clear
@@ -371,7 +432,7 @@ case "$x" in
    4 | 04)
    clear
    sshmonitor
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;      
    5 | 05)
    clear
@@ -397,7 +458,7 @@ case "$x" in
    9 | 09)
    clear
    infousers
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;
    10)
    conexao
@@ -406,7 +467,7 @@ case "$x" in
    11)
    clear
    velocity
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;
    12)
    clear
@@ -415,18 +476,18 @@ case "$x" in
    ;;
    13)
    clear
-   echo -e "${CYAN}${SHIELD} ${WHITE}NETWORK TRAFFIC MONITOR ${SHIELD} ${YELLOW}Press CTRL + C to exit${RESET}"
+   echo -e "${NEON_BLUE}${SHIELD} ${WHITE}MAPTECH TRAFFIC MONITOR ${SHIELD} ${GOLD}Press CTRL + C to exit${RESET}"
    sleep 4
    nload
    ;;
    14)
    clear
    otimizar
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;
    15)
    userbackup
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;
    16)
    limit_ssh
@@ -439,24 +500,24 @@ case "$x" in
    18)
    clear
    detalhes
-   echo -ne "\n${GREEN}${ARROW} ${WHITE}Press ${YELLOW}ENTER${WHITE} to return to menu${RESET}"; read
+   echo -ne "\n${NEON_GREEN}${ARROW} ${WHITE}Press ${GOLD}ENTER${WHITE} to return to menu${RESET}"; read
    ;;
    19)
    menu2
    ;;
    0 | 00)
-   echo -e "${RED}${ARROW} ${WHITE}Exiting application...${RESET}"
+   echo -e "${RED}${ARROW} ${WHITE}Exiting MAPTECH GLOBAL system...${RESET}"
    sleep 2
    clear
    exit;
    ;;
    *)
-   echo -e "\n${RED}${CROSS} ${WHITE}Invalid option! Please try again.${RESET}"
+   echo -e "\n${RED}${CROSS_MARK} ${WHITE}Invalid selection! Please choose a valid option.${RESET}"
    sleep 2
 esac
 done
 }
 
-# Start the application
+# Initialize MAPTECH GLOBAL System
 menu
 #fim
