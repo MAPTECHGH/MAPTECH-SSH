@@ -56,6 +56,7 @@ CIRCLE="○"
 TRIANGLE="▲"
 SQUARE="■"
 HEART="❤️"
+CLOCK="🕐"
 
 # Advanced Progress Bar
 fun_bar () {
