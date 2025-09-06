@@ -1,4 +1,4 @@
-## ◇────── WOLF VPS MANAGER ───────◇
+## ◇────── MAPTECH SSH ───────◇
 ___Update System Packages and Install SCRIPT___
 
 ```
