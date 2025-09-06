@@ -419,7 +419,7 @@ sleep 1s
 clear
 echo ""
 echo -e "${NEON_PURPLE}╔══════════════════════════════════════════════════════════════╗${RESET}"
-echo -e "${NEON_PURPLE}║${BG_PURPLE}${WHITE}                    ${GEAR} INSTALLATION PROGRESS ${GEAR}                   ${RESET}${NEON_PURPLE}║${RESET}"
+echo -e "${NEON_PURPLE}║${BG_PURPLE}${WHITE}                    ${GEAR} INSTALLATION PROGRESS ${GEAR}                ${RESET}${NEON_PURPLE}║${RESET}"
 echo -e "${NEON_PURPLE}╚══════════════════════════════════════════════════════════════╝${RESET}"
 echo ""
 echo -e "${NEON_BLUE}${ROCKET} ${WHITE}STEP 1: Updating system packages..."
